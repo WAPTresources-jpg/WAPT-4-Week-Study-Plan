@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Free 4-week study timetable for the Wits Additional Placement Test (WAPT) for GEMP entry. Covers Anatomy, Physiology and Molecular Medicine, 4 hours a day, with spaced revision, mock tests and rest days.">
+<meta property="og:title" content="WAPT 4-week study plan: free timetable">
+<meta property="og:description" content="A free day-by-day timetable for the Wits Additional Placement Test: Anatomy, Physiology and Molecular Medicine in 4 weeks.">
+<meta property="og:type" content="website">
+<title>WAPT 4-Week Study Plan: Free Wits Additional Placement Test Timetable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FA; --surface:#FFFFFF; --ink:#18202B; --muted:#55606E; --faint:#8791A0; --line:#DDE2EA;
+  --anat-bg:#FBE8EC; --anat:#A3263F;
+  --phys-bg:#E2F0F6; --phys:#13607C;
+  --mol-bg:#ECE9FB; --mol:#4B3BA8;
+  --recall-bg:#FCF2D9; --recall:#7E5300;
+  --mcq-bg:#E3F3E9; --mcq:#22693F;
+  --review-bg:#ECEFF3; --review:#3D4650;
+  --mock-bg:#262B42; --mock:#FFD36B; --mock-ink:#F2F3F8;
+  --rest-a:#EEF1F5; --rest-b:#E4E8EE;
+  --focus:#1D5FD1;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Atkinson Hyperlegible','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151C; --surface:#181D26; --ink:#E8ECF2; --muted:#A6B0BE; --faint:#7A8494; --line:#2A313D;
+    --anat-bg:#3A1C25; --anat:#F2A0B1;
+    --phys-bg:#14303B; --phys:#84CDE8;
+    --mol-bg:#262147; --mol:#B9AEFA;
+    --recall-bg:#3A2E10; --recall:#F1C76A;
+    --mcq-bg:#16331F; --mcq:#8AD9A6;
+    --review-bg:#232933; --review:#C4CCD6;
+    --mock-bg:#E9E6FF; --mock:#3B2F96; --mock-ink:#1B1F33;
+    --rest-a:#1B2029; --rest-b:#161A22;
+    --focus:#7FB0FF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11151C; --surface:#181D26; --ink:#E8ECF2; --muted:#A6B0BE; --faint:#7A8494; --line:#2A313D;
+  --anat-bg:#3A1C25; --anat:#F2A0B1;
+  --phys-bg:#14303B; --phys:#84CDE8;
+  --mol-bg:#262147; --mol:#B9AEFA;
+  --recall-bg:#3A2E10; --recall:#F1C76A;
+  --mcq-bg:#16331F; --mcq:#8AD9A6;
+  --review-bg:#232933; --review:#C4CCD6;
+  --mock-bg:#E9E6FF; --mock:#3B2F96; --mock-ink:#1B1F33;
+  --rest-a:#1B2029; --rest-b:#161A22;
+  --focus:#7FB0FF;
+}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:inherit;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px;}
+.wrap{max-width:1320px;margin:0 auto;padding:40px 24px 64px;}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--line);}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,6.4vw,84px);line-height:.92;letter-spacing:-.035em;margin:0;}
+h1 .n{display:inline-block;font-variant-numeric:tabular-nums;}
+.lede{font-size:18px;color:var(--muted);margin:18px 0 0;max-width:56ch;}
+.rhythm{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.rhythm div{height:56px;border-radius:6px;display:flex;align-items:flex-end;padding:6px;font-size:12px;font-weight:700;color:var(--muted);background:var(--surface);border:1px solid var(--line);}
+.rhythm div.on{background:var(--phys-bg);border-color:transparent;color:var(--phys);}
+.rhythm div.sat{background:var(--recall-bg);border-color:transparent;color:var(--recall);}
+.rhythm-note{font-size:14px;color:var(--muted);margin:10px 0 0;}
+
+/* Controls */
+.controls{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;margin:28px 0 18px;}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;}
+.tab{font:700 15px var(--body);padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.tab .pct{font-weight:400;opacity:.7;margin-left:6px;font-size:13px;}
+.dateset{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted);}
+.dateset input{font:15px var(--body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);}
+.btn{font:700 14px var(--body);padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;}
+
+/* Week */
+.week{display:none;}
+.week.show{display:block;}
+.week-head{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;margin:6px 0 14px;}
+.week-head h2{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;margin:0;}
+.week-head p{margin:0;color:var(--muted);max-width:70ch;}
+.scroller{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:var(--surface);}
+.grid{display:grid;grid-template-columns:84px repeat(7,minmax(158px,1fr));min-width:1190px;}
+.dh{padding:12px 10px 10px;border-bottom:2px solid var(--ink);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;}
+.dh small{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--muted);letter-spacing:0;}
+.th{padding:10px 8px;font-size:13px;color:var(--muted);border-right:1px solid var(--line);position:sticky;left:0;background:var(--surface);z-index:1;}
+.th b{display:block;color:var(--ink);font-size:14px;font-variant-numeric:tabular-nums;}
+.brk{font-size:11.5px;color:var(--faint);padding:2px 10px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px) left center/100% 1px no-repeat;display:flex;align-items:center;}
+.brk span{background:var(--surface);padding-right:8px;}
+.brk-th{border-right:1px solid var(--line);position:sticky;left:0;background:var(--surface);z-index:1;}
+
+.cell{margin:4px;border-radius:8px;padding:10px 10px 10px 12px;position:relative;border-left:4px solid var(--c);background:var(--cb);display:flex;flex-direction:column;gap:3px;min-height:112px;}
+.cell .kind{font-size:11.5px;color:var(--c);font-weight:700;}
+.cell b{font-family:var(--display);font-size:15.5px;line-height:1.15;letter-spacing:-.01em;padding-right:26px;}
+.cell p{margin:0;font-size:13px;line-height:1.38;color:var(--ink);opacity:.85;}
+.cell a{margin-top:auto;padding-top:5px;font-size:12.5px;font-weight:700;color:var(--c);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;}
+.cell a:hover{text-decoration-thickness:2px;}
+.t-anat{--c:var(--anat);--cb:var(--anat-bg);}
+.t-phys{--c:var(--phys);--cb:var(--phys-bg);}
+.t-mol{--c:var(--mol);--cb:var(--mol-bg);}
+.t-recall{--c:var(--recall);--cb:var(--recall-bg);}
+.t-mcq{--c:var(--mcq);--cb:var(--mcq-bg);}
+.t-review{--c:var(--review);--cb:var(--review-bg);}
+.t-mock{--c:var(--mock);--cb:var(--mock-bg);color:var(--mock-ink);}
+.t-mock p{color:var(--mock-ink);}
+.tick{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--c);background:transparent;cursor:pointer;padding:0;display:grid;place-items:center;}
+.tick svg{width:12px;height:12px;opacity:0;}
+.tick[aria-pressed="true"]{background:var(--c);}
+.tick[aria-pressed="true"] svg{opacity:1;}
+.cell.done{opacity:.55;}
+.cell.done b{text-decoration:line-through;text-decoration-thickness:1px;}
+
+.rest{margin:4px;border-radius:8px;background:repeating-linear-gradient(135deg,var(--rest-a) 0 10px,var(--rest-b) 10px 20px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:16px;gap:6px;}
+.rest b{font-family:var(--display);font-size:22px;letter-spacing:-.02em;}
+.rest p{margin:0;font-size:13px;color:var(--muted);max-width:18ch;}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 0;font-size:14px;color:var(--muted);}
+.legend span{display:inline-flex;align-items:center;gap:7px;}
+.legend i{width:14px;height:14px;border-radius:3px;background:var(--cb);border-left:4px solid var(--c);}
+
+/* Notes */
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line);}
+.notes h3{font-family:var(--display);font-size:20px;letter-spacing:-.015em;margin:0 0 8px;}
+.notes p{margin:0 0 10px;color:var(--muted);font-size:15px;max-width:60ch;}
+.notes p strong{color:var(--ink);}
+footer{margin-top:36px;font-size:13px;color:var(--faint);}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:24px;}
+  .notes{grid-template-columns:1fr;gap:20px;}
+  .wrap{padding:28px 16px 48px;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+@media print{
+  @page{size:A4 landscape;margin:10mm;}
+  body{background:#fff;color:#000;font-size:12px;}
+  .controls,.tick,.rhythm-wrap{display:none!important;}
+  .week{display:block!important;break-before:page;}
+  .scroller{overflow:visible;border:none;}
+  .grid{min-width:0;grid-template-columns:60px repeat(7,1fr);}
+  .cell{min-height:0;padding:5px 6px 5px 8px;}
+  .cell b{font-size:11px;padding-right:0;}
+  .cell p,.cell a{font-size:9.5px;}
+  .cell.done{opacity:1;}
+  .notes{break-before:page;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <h1>The WAPT in <span class="n">4</span>&nbsp;weeks, <span class="n">4</span>&nbsp;hours a&nbsp;day</h1>
+    <p class="lede">A free study timetable for the Wits Additional Placement Test (GEMP entry). It covers Human Anatomy, Human Physiology and Molecular Medicine, builds revision into every day, and keeps every Sunday off.</p>
+  </div>
+  <div class="rhythm-wrap">
+    <div class="rhythm" aria-label="Weekly rhythm: Monday to Friday new content, Saturday review and mock, Sunday off">
+      <div class="on">Mon</div><div class="on">Tue</div><div class="on">Wed</div><div class="on">Thu</div><div class="on">Fri</div><div class="sat">Sat</div><div>Sun</div>
+    </div>
+    <p class="rhythm-note">Five content days, one review and mock day, one day off. 24 study hours a week, 96 in total.</p>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="dateset">
+    <label for="testdate">Your test date</label>
+    <input type="date" id="testdate">
+    <button class="btn" id="printbtn" type="button">Print all four weeks</button>
+  </div>
+</div>
+
+<main id="weeks"></main>
+
+<div class="legend" aria-label="Colour key">
+  <span class="t-recall"><i></i>Spaced recall</span>
+  <span class="t-anat"><i></i>Anatomy</span>
+  <span class="t-phys"><i></i>Physiology</span>
+  <span class="t-mol"><i></i>Molecular Medicine</span>
+  <span class="t-mcq"><i></i>X-type MCQ practice</span>
+  <span class="t-review"><i></i>Consolidation and review</span>
+  <span class="t-mock"><i></i>Timed mock</span>
+</div>
+
+<section class="notes">
+  <div>
+    <h3>How each day works</h3>
+    <p><strong>Spaced recall (30 min).</strong> Start with a blank page and write down everything you remember about the topics named, before opening any notes. It deliberately reaches back to older weeks, not just yesterday.</p>
+    <p><strong>Two learning hours.</strong> Study the anatomy and physiology of the same system together. Read against the official objectives first, then use any textbook or lecture you like to fill gaps.</p>
+    <p><strong>Practice and consolidation.</strong> An hour of X-type questions on the day's material from any source you have. If you have none, turn each objective into four or five true-or-false statements and test yourself on them. Then spend 30 minutes turning the day into one diagram or summary you could redraw from memory.</p>
+  </div>
+  <div>
+    <h3>Revision and mocks</h3>
+    <p>Every Saturday is a review day: blank-page recall of the whole week, weak-spot repair, and timed practice. Mocks fall on the Saturdays of weeks 2 and 3 and on the Friday of week 4, so each one leaves time to fix what it shows.</p>
+    <p><strong>Each component is passed separately.</strong> Score Anatomy, Physiology and Molecular Medicine on their own after every mock. A strong score in one cannot carry a weak one, so shift Saturday time towards whichever is lowest.</p>
+    <p>In X-type questions every statement is judged on its own, and the number of true statements can vary. Practise deciding each one independently rather than looking for a pattern.</p>
+  </div>
+  <div>
+    <h3>Before you start</h3>
+    <p><strong>The objectives define the syllabus.</strong> Download the current Anatomy, Physiology and Molecular Medicine objectives from the <a href="https://www.wits.ac.za/health/gemp/">Wits GEMP page</a> and check each topic off against them. Videos are a supplement and will sometimes go beyond what is examined.</p>
+    <p><strong>Use whatever resources suit you.</strong> The lecture links simply open a YouTube search for the topic, so you can choose any clear explanation. A standard anatomy or physiology textbook works just as well.</p>
+    <p><strong>Confirm your date and venue</strong> from your official Wits communication. The test is usually on a Monday, so this plan ends on the Sunday before. Enter your date above to fill in the calendar.</p>
+  </div>
+</section>
+
+<footer>Shared freely for future WAPT candidates. Times are a suggestion: keep the order and lengths of the blocks and shift the clock to suit your day. Ticks are saved in this browser only.</footer>
+</div>
+
+<script>
+const GEMP = 'https://www.wits.ac.za/health/gemp/';
+const KIND = {recall:'Spaced recall',anat:'Anatomy',phys:'Physiology',mol:'Molecular Medicine',mcq:'MCQ practice',review:'Consolidation',mock:'Timed mock'};
+const SLOTS = [
+  {s:'08:00',e:'08:30',len:'30 min'},
+  {brk:'10 min break'},
+  {s:'08:40',e:'09:40',len:'60 min'},
+  {brk:'10 min break'},
+  {s:'09:50',e:'10:50',len:'60 min'},
+  {brk:'25 min break: move, eat'},
+  {s:'11:15',e:'12:15',len:'60 min'},
+  {brk:'10 min break'},
+  {s:'12:25',e:'12:55',len:'30 min'}
+];
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+// [type, topic, subtopic, resource label, youtube search query (null = official objectives)]
+const OBJ = 'Check against the WAPT objectives';
+const W = [
+{title:'Week 1: Foundations', focus:'The cell, molecules, blood and immunity. Everything later in the plan builds on this week.', days:[
+ [['recall','Orientation','Read all three official objective lists and rate every section 1 to 5 for confidence.',OBJ,null],
+  ['anat','Anatomical language','Planes, positions, directional terms and terms of movement.','Kenhub: anatomical terminology','Kenhub anatomical terminology planes directional terms'],
+  ['mol','The cell','Organelles, membrane structure and the fluid mosaic model.','Ninja Nerd: cell organelles','Ninja Nerd cell organelles'],
+  ['mcq','Baseline questions','Untimed X-type questions across all three components, from any source. Score each one separately.',OBJ,null],
+  ['review','One-page summary','Terms and organelles from memory, then check and flag the gaps.',OBJ,null]],
+ [['recall','Recall: Monday','Directional terms and organelles, blank page first.',OBJ,null],
+  ['phys','Membrane transport','Diffusion, osmosis, carriers, the Na⁺/K⁺ pump and resting membrane potential.','Ninja Nerd: membrane transport','Ninja Nerd membrane transport'],
+  ['anat','Tissues and epithelia','The four tissue types, epithelial classification and cell junctions.','Kenhub: epithelial tissue','Kenhub epithelial tissue histology'],
+  ['mcq','X-type set','Transport and tissues.',OBJ,null],
+  ['review','Redraw','The Na⁺/K⁺ pump and the epithelial types from memory.',OBJ,null]],
+ [['recall','Recall: transport, tissues','Plus Monday’s terms.',OBJ,null],
+  ['mol','DNA and replication','Nucleotide structure, replication enzymes, leading and lagging strands.','Ninja Nerd: DNA replication','Ninja Nerd DNA replication'],
+  ['mol','Cell cycle and division','Phases, checkpoints, mitosis versus meiosis.','Ninja Nerd: cell cycle','Ninja Nerd cell cycle mitosis meiosis'],
+  ['mcq','X-type set','DNA, replication and the cell cycle.',OBJ,null],
+  ['review','Flashcards','Replication enzymes and cell-cycle checkpoints.',OBJ,null]],
+ [['recall','Recall: DNA, cell cycle','Blank page, then check.',OBJ,null],
+  ['mol','Gene expression','Transcription, RNA processing, translation and gene regulation.','Ninja Nerd: transcription','Ninja Nerd transcription translation'],
+  ['phys','Blood','Composition, haematopoiesis, red cells and haemoglobin.','Ninja Nerd: haematopoiesis','Ninja Nerd hematopoiesis'],
+  ['mcq','X-type set','Gene expression and blood.',OBJ,null],
+  ['review','Flowchart','The central dogma, with where each step happens in the cell.',OBJ,null]],
+ [['recall','Recall: gene expression, blood','Plus Tuesday’s transport.',OBJ,null],
+  ['phys','Haemostasis','Platelet plug, coagulation cascade and fibrinolysis.','Ninja Nerd: hemostasis','Ninja Nerd hemostasis coagulation cascade'],
+  ['mol','Immunology basics','Innate versus adaptive immunity, B and T cells, antibodies.','Armando Hasudungan: immunology','Armando Hasudungan immunology'],
+  ['mcq','X-type set','Haemostasis and immunity.',OBJ,null],
+  ['review','Redraw','The coagulation cascade, start to finish.',OBJ,null]],
+ [['recall','Week 1 recall','Blank-page dump of the whole week, topic by topic.',OBJ,null],
+  ['review','Weak-spot repair','Re-learn the three topics you rated or scored lowest.',OBJ,null],
+  ['mcq','Timed mixed set','All of week 1 at exam pace.',OBJ,null],
+  ['review','Error log','For every wrong statement, write why it was wrong.',OBJ,null],
+  ['review','Plan week 2','Adjust next week’s emphasis using today’s scores.',OBJ,null]]
+]},
+{title:'Week 2: Heart, lungs and kidneys', focus:'The cardiorespiratory and renal systems, with anatomy and physiology studied side by side.', days:[
+ [['recall','Spaced recall: week 1','The cell, DNA and gene expression.',OBJ,null],
+  ['anat','Heart and mediastinum','Chambers, valves, coronary arteries and the great vessels.','Kenhub: heart anatomy','Kenhub heart anatomy'],
+  ['phys','Cardiac cycle and ECG','Pressure and volume changes, conduction system, ECG waves.','Ninja Nerd: cardiac cycle','Ninja Nerd cardiac cycle'],
+  ['mcq','X-type set','Heart structure and function.',OBJ,null],
+  ['review','Redraw','A Wiggers diagram with valve openings and closings marked.',OBJ,null]],
+ [['recall','Recall: the heart','Blank page, then check.',OBJ,null],
+  ['phys','Blood pressure control','Cardiac output, resistance, baroreceptor reflex and RAAS.','Ninja Nerd: blood pressure regulation','Ninja Nerd blood pressure regulation'],
+  ['anat','Blood vessels','Main arterial branches, venous return and portal systems.','Kenhub: major arteries','Kenhub major arteries of the body'],
+  ['mcq','X-type set','Circulation and blood pressure.',OBJ,null],
+  ['review','Flowchart','Short-term and long-term blood pressure control.',OBJ,null]],
+ [['recall','Recall: circulation','Plus week 1 haemostasis.',OBJ,null],
+  ['anat','Respiratory tract','Airways, lung lobes, pleura and the diaphragm.','Kenhub: lungs','Kenhub lungs anatomy'],
+  ['phys','Ventilation and gas exchange','Breathing mechanics, compliance, V/Q matching, the O₂–Hb curve.','Ninja Nerd: oxygen-haemoglobin curve','Ninja Nerd oxygen hemoglobin dissociation curve'],
+  ['mcq','X-type set','Respiratory system.',OBJ,null],
+  ['review','Redraw','The O₂–Hb curve and what shifts it left or right.',OBJ,null]],
+ [['recall','Recall: respiratory','Blank page, then check.',OBJ,null],
+  ['anat','Kidney and urinary tract','Gross kidney structure, the nephron, ureters and bladder.','Kenhub: kidney anatomy','Kenhub kidney anatomy'],
+  ['phys','Renal function','GFR, tubular reabsorption and secretion, countercurrent mechanism.','Ninja Nerd: glomerular filtration','Ninja Nerd glomerular filtration rate'],
+  ['mcq','X-type set','Kidney structure and function.',OBJ,null],
+  ['review','Label a nephron','What is reabsorbed or secreted in each segment.',OBJ,null]],
+ [['recall','Recall: renal','Plus Monday’s heart.',OBJ,null],
+  ['phys','Acid–base and fluids','Buffers, respiratory and renal compensation, fluid compartments.','Ninja Nerd: acid–base','Ninja Nerd acid base physiology'],
+  ['mol','Mutations and DNA repair','Types of mutation, repair pathways and inheritance patterns.','Ninja Nerd: DNA mutations','Ninja Nerd DNA mutations repair'],
+  ['mcq','X-type set','Acid–base and mutations.',OBJ,null],
+  ['review','Worked examples','Acid–base problems by hand, with no calculator.',OBJ,null]],
+ [['recall','Week 2 recall','Blank-page dump of the whole week.',OBJ,null],
+  ['mock','Mock 1, part A','Timed, exam conditions. Questions from all three components.',OBJ,null],
+  ['mock','Mock 1, part B','Continue under the same conditions.',OBJ,null],
+  ['review','Mark and error log','Score each component separately. Note why each error happened.',OBJ,null],
+  ['review','Plan week 3','Move extra time towards the lowest-scoring component.',OBJ,null]]
+]},
+{title:'Week 3: Nerves, hormones, gut and reproduction', focus:'Neuroscience, endocrine control, digestion and reproduction. The densest week, so protect your Sunday.', days:[
+ [['recall','Spaced recall: weeks 1 and 2','Blood, immunity and the kidney.',OBJ,null],
+  ['phys','Neurons and synapses','Resting and action potentials, synaptic transmission.','Ninja Nerd: action potential','Ninja Nerd action potential'],
+  ['anat','Brain and spinal cord','Lobes, brainstem, ventricles, meninges and spinal tracts.','Kenhub: brain anatomy','Kenhub brain anatomy'],
+  ['mcq','X-type set','Neurons and the central nervous system.',OBJ,null],
+  ['review','Redraw','An action potential with the channel states at each phase.',OBJ,null]],
+ [['recall','Recall: neurons, CNS','Blank page, then check.',OBJ,null],
+  ['phys','Autonomic system and reflexes','Sympathetic versus parasympathetic, receptors, the reflex arc.','Ninja Nerd: autonomic nervous system','Ninja Nerd autonomic nervous system'],
+  ['anat','Cranial nerves','All twelve: type, exit point and function.','Kenhub: cranial nerves','Kenhub cranial nerves'],
+  ['mcq','X-type set','Autonomic system and cranial nerves.',OBJ,null],
+  ['review','Table from memory','The twelve cranial nerves, then check.',OBJ,null]],
+ [['recall','Recall: autonomic, cranial nerves','Plus week 2 blood pressure.',OBJ,null],
+  ['phys','Special senses','Vision, hearing and balance, taste and smell.','Ninja Nerd: special senses','Ninja Nerd special senses vision hearing'],
+  ['phys','Endocrine principles','Hormone classes, receptors and the hypothalamic–pituitary axis.','Ninja Nerd: hypothalamus and pituitary','Ninja Nerd hypothalamus pituitary'],
+  ['mcq','X-type set','Senses and endocrine principles.',OBJ,null],
+  ['review','Axis diagrams','Each axis with its feedback arrows.',OBJ,null]],
+ [['recall','Recall: endocrine, senses','Blank page, then check.',OBJ,null],
+  ['phys','Thyroid, adrenal, pancreas','Thyroid hormones, cortisol, aldosterone, insulin and glucagon.','Ninja Nerd: adrenal gland','Ninja Nerd adrenal gland thyroid'],
+  ['anat','GI tract and peritoneum','Gut wall layers, organs, peritoneal relations and blood supply.','Kenhub: peritoneum','Kenhub peritoneum abdominal organs'],
+  ['mcq','X-type set','Endocrine glands and GI anatomy.',OBJ,null],
+  ['review','Flowchart','Blood glucose regulation after a meal and during fasting.',OBJ,null]],
+ [['recall','Recall: glands, GI anatomy','Plus Monday’s neurons.',OBJ,null],
+  ['phys','Digestion and the liver','Secretions, absorption, GI hormones and liver functions.','Ninja Nerd: GI physiology','Ninja Nerd gastrointestinal physiology'],
+  ['phys','Reproduction','Reproductive anatomy, the menstrual cycle, pregnancy hormones.','Ninja Nerd: menstrual cycle','Ninja Nerd menstrual cycle'],
+  ['mcq','X-type set','Digestion and reproduction.',OBJ,null],
+  ['review','Redraw','Menstrual-cycle hormone curves against the ovarian and uterine phases.',OBJ,null]],
+ [['recall','Week 3 recall','Blank-page dump of the whole week.',OBJ,null],
+  ['mock','Mock 2, part A','Full timed paper, all three components.',OBJ,null],
+  ['mock','Mock 2, part B','Continue under exam conditions.',OBJ,null],
+  ['review','Mark and error log','Compare each component with Mock 1.',OBJ,null],
+  ['review','Plan week 4','Name your weakest component and its three weakest topics.',OBJ,null]]
+]},
+{title:'Week 4: Movement, applied molecular medicine, run-in', focus:'The last new content, a final full simulation on Friday, and a deliberately light weekend.', days:[
+ [['recall','Spaced recall: week 2','Heart and lungs.',OBJ,null],
+  ['anat','Bones and joints','Joint classification, synovial joints and terms of movement.','Kenhub: synovial joints','Kenhub synovial joints'],
+  ['phys','Muscle','Sliding filaments, excitation–contraction coupling, muscle types.','Ninja Nerd: muscle contraction','Ninja Nerd muscle contraction'],
+  ['mcq','X-type set','Joints and muscle.',OBJ,null],
+  ['review','Redraw','A sarcomere relaxed and contracted.',OBJ,null]],
+ [['recall','Recall: joints, muscle','Blank page, then check.',OBJ,null],
+  ['anat','The limbs','Shoulder, hip and knee, and the main limb nerves and muscle groups.','Kenhub: brachial plexus','Kenhub brachial plexus'],
+  ['phys','Skin and temperature','Skin layers, heat gain and heat loss, thermoregulation.','Armando Hasudungan: skin','Armando Hasudungan skin anatomy physiology'],
+  ['mcq','X-type set','Limbs and skin.',OBJ,null],
+  ['review','Table','Major limb nerves and what an injury to each causes.',OBJ,null]],
+ [['recall','Spaced recall: week 3','Nerves and hormones.',OBJ,null],
+  ['mol','Cancer biology','Oncogenes, tumour suppressors and the hallmarks of cancer.','Ninja Nerd: oncogenes','Ninja Nerd oncogenes tumor suppressor genes'],
+  ['mol','Stem cells and apoptosis','Potency, differentiation, intrinsic and extrinsic apoptosis.','Ninja Nerd: apoptosis','Ninja Nerd apoptosis'],
+  ['mcq','X-type set','Cancer, stem cells and apoptosis.',OBJ,null],
+  ['review','Concept map','p53, the cell cycle and apoptosis on one page.',OBJ,null]],
+ [['recall','Recall: cancer, apoptosis','Plus week 1 immunology.',OBJ,null],
+  ['mol','HIV','Structure, replication cycle and where drugs act.','Armando Hasudungan: HIV','Armando Hasudungan HIV'],
+  ['mol','Malaria','The Plasmodium life cycle in human and mosquito.','Armando Hasudungan: malaria','Armando Hasudungan malaria life cycle'],
+  ['mcq','X-type set','HIV and malaria.',OBJ,null],
+  ['review','Redraw','Both life cycles from memory.',OBJ,null]],
+ [['recall','Rapid round','Five minutes per system across the whole course.',OBJ,null],
+  ['mock','Final simulation, part A','Strict exam conditions and pacing.',OBJ,null],
+  ['mock','Final simulation, part B','No new content after today.',OBJ,null],
+  ['review','Mark and error log','Score each component separately.',OBJ,null],
+  ['review','Fix five','Close the five errors most likely to recur.',OBJ,null]],
+ [['recall','Definitions and normal values','Light, confident recall only.',OBJ,null],
+  ['review','Weakest component','Targeted repair of its highest-yield topics.',OBJ,null],
+  ['review','Key diagrams','Redraw: coagulation, nephron, action potential, endocrine axes.',OBJ,null],
+  ['review','Lists','Cranial nerves and other must-know lists.',OBJ,null],
+  ['review','Get ready','Confirm venue and time, pack ID and stationery, plan an early night.',OBJ,null]]
+]}
+];
+
+const yt = q => 'https://www.youtube.com/results?search_query=' + encodeURIComponent(q.replace(/^(Ninja Nerd|Kenhub|Armando Hasudungan)\s+/, '') + ' lecture');
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+};
+let done = store.get('wapt4-done') || {};
+const fmt = d => d.toLocaleDateString('en-ZA',{day:'numeric',month:'short'});
+
+function dayDates(){
+  const v = document.getElementById('testdate').value;
+  if(!v) return null;
+  const t = new Date(v + 'T00:00:00');
+  const start = new Date(t); start.setDate(t.getDate() - 28);
+  return i => { const d = new Date(start); d.setDate(start.getDate() + i); return d; };
+}
+
+function render(){
+  const dates = dayDates();
+  const root = document.getElementById('weeks');
+  root.innerHTML = '';
+  W.forEach((wk, wi) => {
+    const sec = document.createElement('section');
+    sec.className = 'week'; sec.id = 'week' + wi; sec.setAttribute('role','tabpanel');
+    sec.innerHTML = `<div class="week-head"><h2>${wk.title}</h2><p>${wk.focus}</p></div>`;
+    const sc = document.createElement('div'); sc.className = 'scroller';
+    const g = document.createElement('div'); g.className = 'grid';
+    // header row
+    g.insertAdjacentHTML('beforeend', `<div class="dh th" style="grid-row:1;grid-column:1;border-bottom:2px solid var(--ink)">Time</div>`);
+    DAYS.forEach((d, di) => {
+      const idx = wi * 7 + di;
+      const sub = dates ? fmt(dates(idx)) : `Day ${idx + 1}`;
+      g.insertAdjacentHTML('beforeend', `<div class="dh" style="grid-row:1;grid-column:${di + 2}">${d}<small>${sub}</small></div>`);
+    });
+    // time column and break rows
+    let si = 0;
+    SLOTS.forEach((s, ri) => {
+      const row = ri + 2;
+      if(s.brk){
+        g.insertAdjacentHTML('beforeend', `<div class="brk-th" style="grid-row:${row};grid-column:1"></div><div class="brk" style="grid-row:${row};grid-column:2 / 8"><span>${s.brk}</span></div>`);
+      } else {
+        g.insertAdjacentHTML('beforeend', `<div class="th" style="grid-row:${row};grid-column:1"><b>${s.s}</b>${s.e}<br>${s.len}</div>`);
+        wk.days.forEach((day, di) => {
+          const [type, topic, sub, label, q] = day[si];
+          const key = `${wi}-${di}-${si}`;
+          const isDone = !!done[key];
+          const href = q ? yt(q) : GEMP;
+          const linkText = q ? 'Find a lecture on this topic' : label;
+          g.insertAdjacentHTML('beforeend',
+            `<div class="cell t-${type}${isDone ? ' done' : ''}" style="grid-row:${row};grid-column:${di + 2}">
+              <button class="tick" type="button" data-k="${key}" aria-pressed="${isDone}" aria-label="Mark ${topic} as done"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" fill="none" stroke="var(--cb)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <span class="kind">${KIND[type]}</span>
+              <b>${topic}</b><p>${sub}</p>
+              <a href="${href}" target="_blank" rel="noopener">${linkText}</a>
+            </div>`);
+        });
+        si++;
+      }
+    });
+    // Sunday rest spanning all slot rows
+    const last = wi === W.length - 1;
+    g.insertAdjacentHTML('beforeend',
+      `<div class="rest" style="grid-row:2 / ${SLOTS.length + 2};grid-column:8"><b>Day off</b><p>${last ? 'Rest. The test is tomorrow, so no studying today.' : 'No studying. Rest is part of the plan.'}</p></div>`);
+    sc.appendChild(g); sec.appendChild(sc); root.appendChild(sec);
+  });
+  renderTabs();
+  showWeek(store.get('wapt4-week') ?? 0);
+}
+
+function pct(wi){
+  let n = 0, t = 0;
+  W[wi].days.forEach((d, di) => d.forEach((_, si) => { t++; if(done[`${wi}-${di}-${si}`]) n++; }));
+  return Math.round(100 * n / t);
+}
+function renderTabs(){
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = W.map((w, i) => `<button class="tab" role="tab" type="button" data-w="${i}" aria-controls="week${i}">Week ${i + 1}<span class="pct">${pct(i)}%</span></button>`).join('');
+}
+function showWeek(i){
+  document.querySelectorAll('.week').forEach((s, j) => s.classList.toggle('show', j === i));
+  document.querySelectorAll('.tab').forEach((t, j) => t.setAttribute('aria-selected', j === i));
+  store.set('wapt4-week', i);
+}
+
+document.addEventListener('click', e => {
+  const tab = e.target.closest('.tab');
+  if(tab){ showWeek(+tab.dataset.w); return; }
+  const tick = e.target.closest('.tick');
+  if(tick){
+    const k = tick.dataset.k;
+    done[k] = !done[k]; if(!done[k]) delete done[k];
+    store.set('wapt4-done', done);
+    tick.setAttribute('aria-pressed', !!done[k]);
+    tick.closest('.cell').classList.toggle('done', !!done[k]);
+    const wi = +k.split('-')[0];
+    const cur = store.get('wapt4-week') ?? 0;
+    renderTabs(); showWeek(cur);
+  }
+});
+document.getElementById('testdate').addEventListener('change', e => { store.set('wapt4-date', e.target.value); render(); });
+document.getElementById('printbtn').addEventListener('click', () => window.print());
+
+const savedDate = store.get('wapt4-date');
+if(savedDate) document.getElementById('testdate').value = savedDate;
+render();
+</script>
+</body>
+</html>
